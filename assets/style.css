@@ -1,5 +1,5 @@
 /* =========================================================
-   有限会社K.OTSUKA — 共通スタイル（明るいカジュアル版：グラデーション＋レイヤー）
+   有限会社K.OTSUKA — 共通スタイル（健康経営サイトと同じ配色：濃紺×青×ミント×金）
    ブランドの動詞: 「動かす」 → キー演出: KVで上昇線が描かれ、
    01企画 → 02実践 → 03検証 の節点が順に灯る（ページで1箇所のみ）
    ========================================================= */
@@ -476,7 +476,7 @@ textarea.input{min-height:180px;resize:vertical}
 
 .checks{display:grid;gap:12px;margin-top:28px}
 .checks li{display:flex;gap:12px;align-items:baseline;font-weight:500;letter-spacing:.04em}
-.checks li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;background:rgba(var(--accent-rgb),.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='%231f74d6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat;transform:translateY(3px)}
+.checks li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;background:rgba(var(--accent-rgb),.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='%230a8a5f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat;transform:translateY(3px)}
 
 
 /* =========================================================
@@ -489,7 +489,7 @@ textarea.input{min-height:180px;resize:vertical}
     radial-gradient(90% 60% at 110% 40%, #efe6d3 0%, rgba(239,230,211,0) 58%),
     radial-gradient(80% 60% at -10% 78%, #f1ebdf 0%, rgba(241,235,223,0) 60%),
     linear-gradient(180deg, #f7f3eb 0%, #f1ece2 48%, #f5f1e9 100%)}
-.bg-canvas::after{content:"";position:absolute;inset:0;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%231f74d6' stroke-width='.7'%3E%3Ccircle cx='0' cy='0' r='28'/%3E%3Ccircle cx='56' cy='0' r='28'/%3E%3Ccircle cx='0' cy='56' r='28'/%3E%3Ccircle cx='56' cy='56' r='28'/%3E%3Ccircle cx='28' cy='28' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:56px 56px;
+.bg-canvas::after{content:"";position:absolute;inset:0;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%230a8a5f' stroke-width='.7'%3E%3Ccircle cx='0' cy='0' r='28'/%3E%3Ccircle cx='56' cy='0' r='28'/%3E%3Ccircle cx='0' cy='56' r='28'/%3E%3Ccircle cx='56' cy='56' r='28'/%3E%3Ccircle cx='28' cy='28' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:56px 56px;
   -webkit-mask-image:radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,.35) 0%, #000 100%);mask-image:radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,.35) 0%, #000 100%)}
 
 /* 濃紺のセクション・KV・下層ヒーローの地紋 */
@@ -703,3 +703,126 @@ a.card:hover{background:#fff;border-color:#fff}
 .logo b{font-weight:400;font-size:22px;letter-spacing:.1em}
 @media (max-width:479px){.logo b{font-size:19px}}
 #loading .word{font-weight:400}
+
+
+/* =========================================================
+   健康経営サイトと同じ背景の色使い
+   濃紺 #0a2a66 / 深い紺 #061a42 / ロイヤル #1747b8 / 緑 #0a8a5f / ミント #3fd0a0 / 金 #c9a24a
+   ========================================================= */
+:root{
+  --navy:#0a2a66;
+  --navy-deep:#061a42;
+  --royal:#1747b8;
+  --mint:#3fd0a0;
+  --gold:#c9a24a;
+  --gold-l:#ecd59a;
+  --ink:#0c1a30;
+  --ink-2:#3f4b5e;
+  --ink-3:#7a869a;
+  --paper:#f3f7fd;
+  --paper-2:#eef3fb;
+  --dark:#0a2a66;
+  --dark-rgb:10,42,102;
+  --accent:#1747b8;
+  --accent-rgb:23,71,184;
+  --accent-light:#ecd59a;
+  --accent-2:#0a8a5f;
+  --accent-2-dark:#06684a;
+  --line:#d8e0ec;
+  --card:#ffffff;
+  --radius:14px;
+  --grad:linear-gradient(120deg,#0a2a66 0%,#1747b8 45%,#0a8a5f 100%);
+  --grad-deep:linear-gradient(120deg,#0a2a66 0%,#1747b8 45%,#0a8a5f 100%);
+  --grad-warm:linear-gradient(135deg,#12a873 0%,#0a8a5f 50%,#06684a 100%);
+  --shadow-card:0 18px 40px -24px rgba(10,42,102,.35),0 2px 6px -2px rgba(10,42,102,.08);
+}
+
+/* ページの地：淡い青のグラデーション＋青とミントのほのかな光＋細かなドット */
+.bg-canvas{background:
+    radial-gradient(50% 45% at 100% 0%, rgba(23,71,184,.10) 0%, rgba(23,71,184,0) 65%),
+    radial-gradient(45% 45% at 0% 100%, rgba(63,208,160,.12) 0%, rgba(63,208,160,0) 65%),
+    linear-gradient(180deg,#f7faff 0%,#f3f7fd 50%,#eef3fb 100%)}
+.bg-canvas::after{filter:none;opacity:1;background-repeat:repeat;background-size:22px 22px;
+  background-image:radial-gradient(rgba(10,42,102,.07) 1px, rgba(10,42,102,0) 1.2px)}
+
+/* ヘッダー：白＋上端に流れるグラデーションライン */
+.header{background:rgba(255,255,255,.9);box-shadow:0 1px 0 rgba(10,42,102,.08)}
+.header::after{top:0;bottom:auto;height:3px;opacity:1;
+  background:linear-gradient(90deg,var(--navy),var(--royal),var(--mint),var(--gold),var(--navy));
+  background-size:200% 100%;animation:fx-line 10s linear infinite}
+@keyframes fx-line{to{background-position:-200% 0}}
+.header .btn{background:var(--grad-warm);box-shadow:0 10px 22px -10px rgba(6,104,74,.6)}
+.logo-mark{color:var(--royal)}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* KV・下層ヒーロー：濃紺の帯＋斜めの光の筋＋青・ミント・金の光 */
+.kv,.page-hero{color:#fff}
+.kv::before,.page-hero::before{background:
+    radial-gradient(45% 60% at 4% 0%, rgba(23,71,184,.75), rgba(23,71,184,0) 70%),
+    radial-gradient(40% 55% at 98% 100%, rgba(63,208,160,.32), rgba(63,208,160,0) 70%),
+    radial-gradient(28% 40% at 62% 0%, rgba(201,162,74,.28), rgba(201,162,74,0) 70%),
+    linear-gradient(160deg,#061a42 0%,#0a2a66 48%,#0b3a7a 100%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 170px),transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 170px),transparent 100%)}
+.kv::after,.page-hero::after{inset:0 0 -96px;width:auto;height:auto;border-radius:0;filter:none;opacity:.5;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 1px,rgba(255,255,255,0) 1px 22px);
+  -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 170px),transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 170px),transparent 100%)}
+.kv .kicker,.page-hero .kicker{color:var(--gold-l)}
+.kv .kicker::before,.page-hero .kicker::before{background:linear-gradient(90deg,var(--gold),var(--gold-l))}
+.kv .h-display,.page-hero .h-display{color:#fff}
+.kv .h-display em,.page-hero .h-display em{background:linear-gradient(90deg,var(--mint),#9ff0d2 50%,var(--gold-l));-webkit-background-clip:text;background-clip:text;color:transparent}
+.kv .kv-lead,.page-hero .lead,.page-hero p{color:#d5e0f2}
+.kv .kv-points li{background:rgba(255,255,255,.08);border:1.5px solid rgba(236,213,154,.75);color:#fff;box-shadow:none}
+.kv .btn,.page-hero .btn{background:transparent;border-color:rgba(255,255,255,.75);color:#fff}
+.kv .btn:hover,.page-hero .btn:hover{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
+.btn--accent,.kv .btn--accent,.page-hero .btn--accent,.section-dark .btn--accent,.cta-fixed .btn--accent{
+  background:var(--grad-warm);border-color:transparent;color:#fff;box-shadow:0 10px 22px -10px rgba(6,104,74,.6)}
+.btn--accent:hover,.kv .btn--accent:hover,.page-hero .btn--accent:hover,.section-dark .btn--accent:hover{
+  background:var(--grad-warm);color:#fff;transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(6,104,74,.7)}
+.page-hero .subnav a{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3);color:#fff}
+.page-hero .subnav a:hover{background:#fff;color:var(--navy)}
+
+/* 写真：上に淡い光沢、下に紺の陰影。KV の写真はミントと金のレイヤーを重ねる */
+.photo::after{background:
+    linear-gradient(120deg,rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 32%),
+    linear-gradient(180deg,rgba(20,50,90,0) 62%,rgba(20,50,90,.16) 100%)}
+.kv .photo,.page-hero .photo{box-shadow:16px 16px 0 0 rgba(63,208,160,.35),32px 32px 0 0 rgba(201,162,74,.3),0 34px 70px -26px rgba(0,0,0,.7)}
+
+/* 濃色セクション：濃紺のグラデーション＋青・ミント・金の光 */
+.section-dark::before{background:linear-gradient(135deg,#061a42 0%,#0a2a66 50%,#063f5a 100%)}
+.section-dark::after{background-image:
+    radial-gradient(circle at 12% 28%, rgba(23,71,184,.55), rgba(23,71,184,0) 36%),
+    radial-gradient(circle at 88% 74%, rgba(63,208,160,.28), rgba(63,208,160,0) 34%),
+    radial-gradient(circle at 60% 8%, rgba(201,162,74,.22), rgba(201,162,74,0) 30%)}
+.section-dark .kicker{color:var(--gold-l)}
+.section-dark .kicker::before{background:linear-gradient(90deg,var(--gold),var(--gold-l))}
+.section-dark .h-sub,.section-dark .lead,.section-dark p{color:#d5e0f2}
+.section-dark .stat .num{color:var(--gold-l)}
+.section-dark .btn:hover{color:var(--navy)}
+/* 最後の CTA はそのまま濃紺のフッターへつなぐ（下端を溶かさない） */
+.section-dark.cta::before{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 200px);mask-image:linear-gradient(180deg,transparent 0,#000 200px)}
+
+/* 見出しのラベル・カード */
+.kicker{color:var(--accent)}
+.kicker::before{width:28px;height:2px;border-radius:2px;background:var(--grad)}
+.h2 em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card,.bsc > div,.contact-box{background:#fff;border:0;box-shadow:var(--shadow-card);overflow:hidden}
+.card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad)}
+a.card:hover{background:#fff}
+.checks li::before{background-color:rgba(10,138,95,.12)}
+#loading{background:#fff}
+#loading .word{color:var(--navy)}
+
+/* フッター：深い紺＋上端に金のライン */
+.footer{background:var(--navy-deep);color:#b9c6dc}
+.footer::before{left:0;right:0;height:3px;border-radius:0;opacity:1;
+  background:linear-gradient(90deg,transparent,var(--gold) 20%,var(--gold-l) 50%,var(--gold) 80%,transparent)}
+.footer-inner{border-bottom-color:rgba(255,255,255,.12)}
+.footer-bottom{color:#8ea0bf}
+.footer a:hover{color:var(--gold-l)}
+.footer .logo-mark{color:var(--gold-l)}
+.footer .logo b{background:linear-gradient(90deg,#fff,var(--gold-l));-webkit-background-clip:text;background-clip:text;color:transparent}
+.footer .logo small{color:#b9c6dc}
+
+@media (prefers-reduced-motion:reduce){.header::after{animation:none}}

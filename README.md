@@ -32,8 +32,8 @@
 
 ## デザイン
 
-- 明るいカジュアル版：パステルのグラデーション背景＋重なるレイヤー、見出しは Zen Maru Gothic、ロゴ社名は Libre Caslon Text（案07）
-- グラデーションは `--grad`（青緑→青→紫）と `--grad-warm`（ボタン）。ロゴ書体を変えるときは `assets/style.css` の `--font-latin` と各ページの Google Fonts の読み込みを変更
+- 配色は健康経営サイト（kenko-keiei-project-pages）と同じ：濃紺 `#0a2a66`・ロイヤル `#1747b8`・緑 `#0a8a5f`・ミント `#3fd0a0`・金 `#c9a24a`。淡い青のドット地、濃紺のファーストビューとフッター。見出しは Zen Maru Gothic、ロゴ社名は Libre Caslon Text（案07）
+- グラデーションは `--grad`（濃紺→青→緑）と `--grad-warm`（緑のボタン）。ロゴ書体を変えるときは `assets/style.css` の `--font-latin` と各ページの Google Fonts の読み込みを変更
 
 ## ローカル確認
 
