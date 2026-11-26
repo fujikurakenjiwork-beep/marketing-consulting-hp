@@ -15,7 +15,7 @@
 | `company.html` | 会社概要・アクセス |
 | `contact.html` / `thanks.html` | お問い合わせフォーム（デモ）／送信完了 |
 | `privacy.html` | プライバシーポリシー（サンプル文面） |
-| `logo.html` | ロゴ案（シンボル共通・社名10書体の比較。サイトは案01 Cormorant Garamond を採用） |
+| `logo.html` | ロゴ案（シンボル共通・社名10書体の比較。サイトは案07 Libre Caslon Text を採用） |
 | `assets/style.css` / `assets/main.js` | 共通スタイル・スクリプト |
 
 ## 本番化の前に差し替えるもの（ソース内の「要差替」コメント）
@@ -32,8 +32,8 @@
 
 ## デザイン
 
-- 高級感版：生成り＋濃紺 `#0f1d30`＋金 `#b8955a`、見出しは Shippori Mincho、ロゴ社名は Cormorant Garamond
-- 背景に金の七宝柄（地紋）を薄く重ねる。ロゴ書体を変えるときは `assets/style.css` の `--font-latin` と各ページの Google Fonts の読み込みを変更
+- 明るいカジュアル版：パステルのグラデーション背景＋重なるレイヤー、見出しは Zen Maru Gothic、ロゴ社名は Libre Caslon Text（案07）
+- グラデーションは `--grad`（青緑→青→紫）と `--grad-warm`（ボタン）。ロゴ書体を変えるときは `assets/style.css` の `--font-latin` と各ページの Google Fonts の読み込みを変更
 
 ## ローカル確認
 
