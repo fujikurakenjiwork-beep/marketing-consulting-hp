@@ -1,13 +1,13 @@
 /* =========================================================
-   SAMPLE & Co. — 共通スタイル
-   ブランドの動詞: 「動かす（MOVE）」 → キー演出: KVで上昇線が描かれ、
+   有限会社K.OTSUKA — 共通スタイル（日本語・明朝見出し）
+   ブランドの動詞: 「動かす」 → キー演出: KVで上昇線が描かれ、
    01企画 → 02実践 → 03検証 の節点が順に灯る（ページで1箇所のみ）
    ========================================================= */
 
 /* 0. トークン — 無彩色 + 藍1色 */
 :root{
-  --font-display:"Instrument Serif","Times New Roman",serif;
-  --font-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --font-display:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --font-body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
   --ink:#17181c;
   --ink-2:#55575e;
   --ink-3:#86888e;
@@ -24,7 +24,7 @@
   --ease:cubic-bezier(.22,1,.36,1);
   --dur:1100ms;
   --stagger:80ms;
-  --radius:6px;
+  --radius:2px;
   --max:1200px;
   --gutter:clamp(20px,5vw,72px);
   --header-h:72px;
@@ -34,7 +34,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   font-family:var(--font-body);color:var(--ink);background:var(--paper);
-  line-height:1.9;letter-spacing:.03em;font-feature-settings:"palt";
+  line-height:1.95;letter-spacing:.04em;font-feature-settings:"palt";
   overflow-x:hidden;-webkit-font-smoothing:antialiased;
 }
 img,svg{max-width:100%;display:block}
@@ -82,6 +82,7 @@ section{background:transparent;position:relative;padding:clamp(96px,12vw,168px) 
 .section-dark .kicker::before{background:var(--accent-light)}
 .section-dark .h-sub,.section-dark .lead,.section-dark p{color:rgba(238,237,232,.78)}
 .section-dark em,.section-dark .h2 em,.section-dark .h-display em{color:var(--accent-light)}
+.section-dark .h2{color:var(--on-dark)}
 .section-dark .btn{border-color:rgba(238,237,232,.5)}
 .section-dark .btn:hover{background:var(--on-dark);color:var(--dark)}
 .hairline{height:1px;opacity:.6;margin:0 var(--gutter);
@@ -120,7 +121,7 @@ section{background:transparent;position:relative;padding:clamp(96px,12vw,168px) 
 #loading{position:fixed;inset:0;z-index:100;background:var(--paper);display:grid;place-items:center;
   transition:opacity 700ms var(--ease),visibility 0s 700ms}
 #loading.is-done{opacity:0;visibility:hidden}
-#loading .word{font-family:var(--font-display);font-size:clamp(34px,6vw,72px);letter-spacing:.06em;display:flex;overflow:hidden;line-height:1.2}
+#loading .word{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,5vw,56px);letter-spacing:.12em;display:flex;overflow:hidden;line-height:1.2}
 #loading .word span{display:inline-block;transform:translateY(110%);animation:rise-up 900ms var(--ease) forwards;animation-delay:calc(var(--i)*45ms);white-space:pre}
 #loading .bar{width:min(240px,50vw);height:1px;margin:18px auto 0;background:var(--accent);transform:scaleX(0);transform-origin:left;animation:bar 1000ms var(--ease) 100ms forwards}
 @keyframes rise-up{to{transform:none}}
@@ -132,15 +133,14 @@ section{background:transparent;position:relative;padding:clamp(96px,12vw,168px) 
 .header{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--header-h);display:flex;align-items:center;gap:32px;
   padding:0 var(--gutter);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   background:rgba(246,246,243,.62)}
-.logo{font-family:var(--font-display);font-size:26px;letter-spacing:.02em;line-height:1;white-space:nowrap}
-.logo i{color:var(--accent);padding:0 .06em}
+.logo{font-family:var(--font-display);font-weight:600;font-size:22px;letter-spacing:.1em;line-height:1;white-space:nowrap;display:inline-flex;align-items:baseline;gap:8px}
+.logo small{font-family:var(--font-body);font-weight:500;font-size:11px;letter-spacing:.14em;color:var(--ink-2)}
 .nav{display:flex;gap:36px;margin-left:auto}
-.nav a{position:relative;display:grid;font-size:14px;letter-spacing:.08em;line-height:1.3;padding:6px 0}
-.nav a small{font-size:10px;letter-spacing:.14em;color:var(--ink-3)}
+.nav a{position:relative;display:block;font-size:14px;font-weight:500;letter-spacing:.1em;line-height:1.3;padding:8px 0}
 .nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform 600ms var(--ease)}
 .nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
 .nav a[aria-current="page"]{color:var(--accent)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 30px;border:1px solid currentColor;border-radius:999px;
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 30px;border:1px solid currentColor;border-radius:var(--radius);
   font-size:14px;letter-spacing:.12em;line-height:1.4;transition:background 600ms var(--ease),color 600ms var(--ease),border-color 600ms var(--ease);cursor:pointer;background:transparent}
 .btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .btn--accent{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -158,8 +158,9 @@ section{background:transparent;position:relative;padding:clamp(96px,12vw,168px) 
 .sp-menu{position:fixed;inset:0;z-index:45;background:var(--paper);padding:calc(var(--header-h) + 32px) var(--gutter) 40px;
   display:flex;flex-direction:column;gap:6px;visibility:hidden;opacity:0;transition:opacity 500ms var(--ease),visibility 0s 500ms;overflow-y:auto}
 .menu-open .sp-menu{visibility:visible;opacity:1;transition:opacity 500ms var(--ease)}
-.sp-menu a{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--font-display);font-size:32px;line-height:1.2}
-.sp-menu a small{font-family:var(--font-body);font-size:12px;letter-spacing:.14em;color:var(--ink-3)}
+.sp-menu a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:500;letter-spacing:.12em;line-height:1.4}
+.sp-menu a::after{content:"→";color:var(--accent);font-size:14px}
+.sp-menu .sp-tel::after{content:none}
 .sp-menu .sp-tel{margin-top:24px;font-family:var(--font-body);font-size:14px;color:var(--ink-2);border:0;display:block}
 .menu-open{overflow:hidden}
 @media (max-width:899px){
@@ -170,15 +171,14 @@ section{background:transparent;position:relative;padding:clamp(96px,12vw,168px) 
 /* =========================================================
    3. 見出し — 欧文ディスプレイ × 和文サブの2層
    ========================================================= */
-.h-display{display:block;font-family:var(--font-display);font-weight:400;line-height:.98;letter-spacing:-.01em;font-size:clamp(58px,10.5vw,156px)}
-.h-display em,.h2 em{font-style:italic;color:var(--accent)}
-.h1-ja{display:block;font-size:clamp(22px,3vw,38px);font-weight:500;letter-spacing:.14em;line-height:1.6;margin-top:clamp(16px,2vw,28px)}
-.h2{font-family:var(--font-display);font-weight:400;font-size:clamp(42px,5.8vw,86px);line-height:1.04;letter-spacing:-.005em}
+.h-display{display:block;font-family:var(--font-display);font-weight:600;line-height:1.4;letter-spacing:.08em;font-size:clamp(34px,5.6vw,80px)}
+.h-display em,.h2 em{font-style:normal;color:var(--accent)}
+.h2{font-family:var(--font-display);font-weight:600;font-size:clamp(25px,3vw,42px);line-height:1.6;letter-spacing:.08em}
 .h-sub{font-size:clamp(15px,1.5vw,18px);letter-spacing:.16em;color:var(--ink-2);margin-top:18px;font-weight:500}
 .h3{font-size:clamp(19px,1.9vw,24px);font-weight:500;line-height:1.6;letter-spacing:.06em}
 .lead{font-size:clamp(16px,1.35vw,18px);line-height:2.15;max-width:40em}
-.kicker{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;font-weight:500}
-.kicker::before{content:"";width:28px;height:1px;background:var(--accent)}
+.kicker{display:flex;align-items:center;gap:14px;font-size:13px;letter-spacing:.16em;color:var(--accent);margin-bottom:20px;font-weight:500}
+.kicker::before{content:"";width:28px;height:1px;background:var(--accent);flex:none}
 .note{font-size:12px;color:var(--ink-3);margin-top:24px;letter-spacing:.06em}
 .section-dark .note{color:rgba(238,237,232,.5)}
 .link-arrow{display:inline-flex;align-items:center;gap:12px;font-size:14px;letter-spacing:.12em;padding-bottom:6px;border-bottom:1px solid currentColor;margin-top:32px}
@@ -212,7 +212,7 @@ html:not(.js) .node,html:not(.js) .node-label{opacity:1;transform:none}
 .node-label{position:absolute;transform:translate(-50%,calc(-100% - 22px));text-align:center;opacity:0;white-space:nowrap;
   transition:opacity 900ms var(--ease),transform 900ms var(--ease);transition-delay:var(--nd,0ms)}
 .js.is-ready .node-label{opacity:1;transform:translate(-50%,calc(-100% - 30px))}
-.node-label b{display:block;font-family:var(--font-display);font-weight:400;font-size:clamp(15px,1.5vw,22px);color:var(--accent);line-height:1}
+.node-label b{display:block;font-family:var(--font-display);font-weight:600;font-size:clamp(14px,1.3vw,18px);color:var(--accent);line-height:1}
 .node-label span{display:block;font-size:clamp(11px,1vw,13px);letter-spacing:.14em;color:var(--ink-2);margin-top:4px}
 @media (max-width:899px){
   .motion{position:relative;right:auto;bottom:auto;width:100%;margin-top:56px}
@@ -220,8 +220,7 @@ html:not(.js) .node,html:not(.js) .node-label{opacity:1;transform:none}
 
 /* 下層ページのヒーロー（同じ線モチーフを短く再演） */
 .page-hero{min-height:clamp(440px,64svh,660px);display:grid;align-content:end;padding-top:calc(var(--header-h) + 64px);padding-bottom:clamp(56px,7vw,96px);overflow:hidden}
-.page-hero .h-display{font-size:clamp(56px,9vw,132px)}
-.page-hero .h1-ja{font-size:clamp(20px,2.4vw,30px)}
+.page-hero .h-display{font-size:clamp(32px,4.8vw,64px)}
 .page-hero .lead{margin-top:28px;color:var(--ink-2)}
 .page-hero .motion{width:min(52vw,780px);bottom:clamp(24px,5vh,64px);opacity:.75}
 @media (max-width:899px){.page-hero .motion{display:none}}
@@ -244,7 +243,7 @@ html:not(.js) .node,html:not(.js) .node-label{opacity:1;transform:none}
   background:var(--card);border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(23,24,28,.04);
   transition:transform 700ms var(--ease),background 700ms var(--ease)}
 a.card:hover{transform:translateY(-4px);background:rgba(255,255,255,.8)}
-.card .num{font-family:var(--font-display);font-size:15px;color:var(--accent);letter-spacing:.06em}
+.card .num{font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--accent);letter-spacing:.1em}
 .card .en{font-family:var(--font-display);font-size:clamp(28px,2.6vw,36px);line-height:1}
 .card .h3{margin-top:-4px}
 .card p{font-size:15px;color:var(--ink-2);line-height:2}
@@ -260,7 +259,7 @@ a.card:hover .more::after{transform:translateX(5px)}
 
 /* 数字 */
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px)}
-.stat .num{font-family:var(--font-display);font-size:clamp(56px,6.4vw,104px);line-height:1;color:var(--on-dark)}
+.stat .num{font-family:var(--font-display);font-weight:600;font-size:clamp(48px,5.4vw,84px);line-height:1;color:var(--on-dark)}
 .stat .unit{font-size:16px;margin-left:6px;letter-spacing:.1em}
 .stat .label{font-size:13px;letter-spacing:.14em;margin-top:12px}
 @media (max-width:639px){.stats{grid-template-columns:1fr}}
@@ -307,7 +306,7 @@ a.card:hover .more::after{transform:translateX(5px)}
 /* BSC 図（HTMLで組む：スマホでも読める） */
 .bsc{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px}
 .bsc > div{padding:26px 22px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.7);min-height:150px}
-.bsc b{display:block;font-family:var(--font-display);font-weight:400;font-size:24px;color:var(--accent);line-height:1.1}
+.bsc b{display:block;font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--accent);line-height:1.1}
 .bsc strong{display:block;font-weight:500;letter-spacing:.1em;margin-top:6px}
 .bsc p{font-size:13px;color:var(--ink-2);line-height:1.8;margin-top:8px}
 .bsc > div:nth-child(2),.bsc > div:nth-child(4){text-align:right}
@@ -318,7 +317,7 @@ a.card:hover .more::after{transform:translateX(5px)}
 /* 手順 */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px);counter-reset:step}
 .steps li{position:relative;padding-top:28px;border-top:1px solid rgba(var(--accent-rgb),.3)}
-.steps li::before{counter-increment:step;content:"0" counter(step);display:block;font-family:var(--font-display);font-size:44px;line-height:1;color:var(--accent);margin-bottom:16px}
+.steps li::before{counter-increment:step;content:"0" counter(step);display:block;font-family:var(--font-display);font-weight:600;font-size:34px;line-height:1;color:var(--accent);margin-bottom:16px}
 .steps h3{font-size:17px;font-weight:500;letter-spacing:.08em;line-height:1.6}
 .steps p{font-size:14px;color:var(--ink-2);margin-top:10px;line-height:1.9}
 .steps--3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -330,7 +329,7 @@ a.card:hover .more::after{transform:translateX(5px)}
 .menu-list > div{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr) minmax(0,3fr);gap:20px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .menu-list dt{font-weight:500;letter-spacing:.08em}
 .menu-list dd{font-size:14px;color:var(--ink-2);line-height:1.9}
-.menu-list .price{font-family:var(--font-display);font-size:22px;color:var(--ink);text-align:right;line-height:1.3}
+.menu-list .price{font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--ink);text-align:right;line-height:1.3}
 .menu-list .price small{display:block;font-family:var(--font-body);font-size:11px;color:var(--ink-3);letter-spacing:.08em}
 @media (max-width:767px){.menu-list > div{grid-template-columns:1fr;gap:6px}.menu-list .price{text-align:left}}
 
@@ -358,18 +357,18 @@ a.card:hover .more::after{transform:translateX(5px)}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:24px 0;font-weight:500;letter-spacing:.06em}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--font-display);font-size:28px;line-height:1;color:var(--accent);transition:transform 500ms var(--ease)}
+.faq summary::after{content:"+";font-family:var(--font-body);font-weight:400;font-size:24px;line-height:1;color:var(--accent);transition:transform 500ms var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding:0 0 26px;color:var(--ink-2);font-size:15px;max-width:48em}
 
 /* 代表プロフィール */
 .portrait{aspect-ratio:4/5;border-radius:var(--radius);display:grid;place-items:center;position:relative;overflow:hidden;
   background:radial-gradient(120% 90% at 30% 20%,#fbfbf9 0%,#e9eaec 70%);border:1px solid rgba(255,255,255,.7)}
-.portrait span{font-family:var(--font-display);font-size:clamp(64px,8vw,112px);color:rgba(var(--accent-rgb),.35)}
+.portrait span{font-family:var(--font-display);font-weight:600;font-size:clamp(48px,6vw,88px);color:rgba(var(--accent-rgb),.35)}
 .portrait small{position:absolute;bottom:16px;font-size:11px;letter-spacing:.16em;color:var(--ink-3)}
 .timeline{border-top:1px solid var(--line);margin-top:32px}
 .timeline li{display:grid;grid-template-columns:96px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px}
-.timeline b{font-family:var(--font-display);font-weight:400;font-size:20px;color:var(--accent);line-height:1.5}
+.timeline b{font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--accent);line-height:1.5}
 .timeline span{color:var(--ink-2)}
 .sign{margin-top:40px;font-size:14px;letter-spacing:.14em;color:var(--ink-2)}
 .sign b{display:block;font-size:22px;letter-spacing:.2em;color:var(--ink);font-weight:500;margin-top:4px}
@@ -389,7 +388,7 @@ a.card:hover .more::after{transform:translateX(5px)}
 
 /* CTA */
 .cta{text-align:center}
-.cta .h2{font-size:clamp(44px,6.4vw,96px)}
+.cta .h2{font-size:clamp(24px,3.2vw,40px)}
 .cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:44px}
 .cta .tel{display:block;margin-top:28px;font-family:var(--font-display);font-size:clamp(28px,3vw,40px);color:var(--on-dark);letter-spacing:.04em}
 .cta .tel small{display:block;font-family:var(--font-body);font-size:12px;letter-spacing:.14em;color:rgba(238,237,232,.6)}
