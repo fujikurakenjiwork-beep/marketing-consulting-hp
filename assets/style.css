@@ -1,35 +1,38 @@
 /* =========================================================
-   有限会社K.OTSUKA — 共通スタイル（日本語・明朝見出し）
+   有限会社K.OTSUKA — 共通スタイル（高級感版：濃紺×金・明朝見出し）
    ブランドの動詞: 「動かす」 → キー演出: KVで上昇線が描かれ、
    01企画 → 02実践 → 03検証 の節点が順に灯る（ページで1箇所のみ）
    ========================================================= */
 
-/* 0. トークン — 無彩色 + 藍1色 */
+/* 0. トークン — 生成り＋濃紺＋金 */
 :root{
-  --font-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;
+  --font-display:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --font-latin:"Cormorant Garamond","Times New Roman",serif;   /* ロゴ書体（logo.html の案01） */
   --font-body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
-  --ink:#17181c;
-  --ink-2:#55575e;
+  --ink:#1b1e25;
+  --ink-2:#555860;
   --ink-3:#86888e;
-  --paper:#f7f7f4;
-  --paper-2:#efefea;
-  --dark:#244239;
-  --dark-rgb:36,66,57;
-  --on-dark:#f4f2ec;
-  --accent:#2b7a68;
-  --accent-rgb:43,122,104;
-  --accent-light:#a8dccd;
-  --accent-2:#e07b39;      /* 親しみの差し色：主要ボタンのみ */
-  --accent-2-dark:#c4652a;   /* 濃色セクション上のアクセント */
-  --line:rgba(23,24,28,.09);
-  --card:rgba(255,255,255,.55);
+  --paper:#f6f2ea;
+  --paper-2:#ece6da;
+  --dark:#0f1d30;
+  --dark-rgb:15,29,48;
+  --on-dark:#f3eee3;
+  --accent:#8a6a35;        /* 文字用の深い金 */
+  --accent-rgb:138,106,53;
+  --accent-light:#d6bd86;  /* 濃紺の上の金 */
+  --gold:#b8955a;
+  --gold-rgb:184,149,90;
+  --accent-2:#13233a;      /* 主要ボタン：濃紺 */
+  --accent-2-dark:#0a1524;
+  --line:rgba(27,30,37,.1);
+  --card:rgba(255,253,248,.7);
   --ease:cubic-bezier(.22,1,.36,1);
   --dur:1100ms;
   --stagger:80ms;
-  --radius:14px;
+  --radius:4px;
   --max:1200px;
   --gutter:clamp(20px,5vw,72px);
-  --header-h:72px;
+  --header-h:76px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -473,4 +476,102 @@ textarea.input{min-height:180px;resize:vertical}
 
 .checks{display:grid;gap:12px;margin-top:28px}
 .checks li{display:flex;gap:12px;align-items:baseline;font-weight:500;letter-spacing:.04em}
-.checks li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;background:rgba(var(--accent-rgb),.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='%232b7a68' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat;transform:translateY(3px)}
+.checks li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;background:rgba(var(--accent-rgb),.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='%238a6a35' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat;transform:translateY(3px)}
+
+
+/* =========================================================
+   高級感版 — 濃紺×金、明朝見出し、七宝柄の地紋
+   （上の各ルールを上書き。地紋は背景1枚の上に薄く重ねる）
+   ========================================================= */
+/* 背景：生成りの連続背景＋金の七宝柄（中央は薄く、上下に向かって少し見える） */
+.bg-canvas{background:
+    radial-gradient(120% 70% at 50% -10%, #fbf8f1 0%, rgba(251,248,241,0) 62%),
+    radial-gradient(90% 60% at 110% 40%, #efe6d3 0%, rgba(239,230,211,0) 58%),
+    radial-gradient(80% 60% at -10% 78%, #f1ebdf 0%, rgba(241,235,223,0) 60%),
+    linear-gradient(180deg, #f7f3eb 0%, #f1ece2 48%, #f5f1e9 100%)}
+.bg-canvas::after{content:"";position:absolute;inset:0;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%238a6a35' stroke-width='.7'%3E%3Ccircle cx='0' cy='0' r='28'/%3E%3Ccircle cx='56' cy='0' r='28'/%3E%3Ccircle cx='0' cy='56' r='28'/%3E%3Ccircle cx='56' cy='56' r='28'/%3E%3Ccircle cx='28' cy='28' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,.35) 0%, #000 100%);mask-image:radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,.35) 0%, #000 100%)}
+
+/* 濃紺のセクション・KV・下層ヒーローの地紋 */
+.section-dark::after,.kv::after,.page-hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23d6bd86' stroke-width='.7'%3E%3Ccircle cx='0' cy='0' r='28'/%3E%3Ccircle cx='56' cy='0' r='28'/%3E%3Ccircle cx='0' cy='56' r='28'/%3E%3Ccircle cx='56' cy='56' r='28'/%3E%3Ccircle cx='28' cy='28' r='28'/%3E%3C/g%3E%3C/svg%3E");background-size:56px 56px;opacity:.1;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 200px,#000 calc(100% - 200px),transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 200px,#000 calc(100% - 200px),transparent 100%)}
+.section-dark::before{background:
+    radial-gradient(60% 50% at 85% 30%, rgba(var(--gold-rgb),.12), transparent 70%),
+    linear-gradient(180deg, rgba(var(--dark-rgb),0) 0%, rgba(var(--dark-rgb),.55) 120px, var(--dark) 240px,
+      var(--dark) calc(100% - 240px), rgba(var(--dark-rgb),.55) calc(100% - 120px), rgba(var(--dark-rgb),0) 100%)}
+
+/* KV と下層ヒーローを濃紺に（下端だけ 180px かけて生成りへ溶かす） */
+.kv,.page-hero{color:var(--on-dark);isolation:isolate;overflow:visible;overflow-x:clip}
+.kv::before,.page-hero::before{content:"";position:absolute;inset:0 0 -96px;z-index:-2;pointer-events:none;background:
+    radial-gradient(55% 60% at 88% 18%, rgba(var(--gold-rgb),.16), transparent 70%),
+    radial-gradient(50% 50% at 0% 100%, rgba(40,64,98,.5), transparent 70%),
+    linear-gradient(180deg, var(--dark) 0%, var(--dark) calc(100% - 180px), rgba(var(--dark-rgb),.6) calc(100% - 90px), rgba(var(--dark-rgb),0) 100%)}
+.kv::after,.page-hero::after{-webkit-mask-image:linear-gradient(180deg,#000 0,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 60%,transparent 100%)}
+.kv .kicker,.page-hero .kicker,.section-dark .kicker{color:var(--accent-light)}
+.kv .h-display,.page-hero .h-display{color:var(--on-dark)}
+.kv .h-display em,.page-hero .h-display em{color:var(--accent-light)}
+.kv .kv-lead,.page-hero .lead,.page-hero p{color:rgba(243,238,227,.8)}
+.kv .kv-points li{background:transparent;border:1px solid rgba(var(--gold-rgb),.5);color:var(--accent-light);border-radius:2px}
+.kv .btn,.page-hero .btn,.section-dark .btn{border-color:rgba(243,238,227,.45);color:var(--on-dark)}
+.kv .btn:hover,.page-hero .btn:hover,.section-dark .btn:hover{background:var(--on-dark);color:var(--dark);border-color:var(--on-dark)}
+.kv .btn--accent,.page-hero .btn--accent,.section-dark .btn--accent{
+  background:linear-gradient(135deg,#d2b67c 0%,#b8955a 55%,#a3824a 100%);border-color:transparent;color:var(--dark);font-weight:500}
+.kv .btn--accent:hover,.page-hero .btn--accent:hover,.section-dark .btn--accent:hover{background:var(--on-dark);color:var(--dark);border-color:var(--on-dark)}
+.page-hero .subnav a{background:transparent;border-color:rgba(243,238,227,.25);color:var(--on-dark)}
+.page-hero .subnav a:hover{background:var(--on-dark);color:var(--dark)}
+.page-hero .motion pattern circle,.kv .motion pattern circle{fill:rgba(214,189,134,.2)}
+.page-hero .trail-base{stroke:rgba(var(--gold-rgb),.2)}
+.page-hero .trail,.page-hero .node .dot{stroke:var(--gold)}
+.page-hero .node .dot{fill:var(--gold)}
+.page-hero .node-label span{color:rgba(243,238,227,.7)}
+/* 写真：角を締め、金の細い額縁を外側に */
+.photo{border-radius:var(--radius)}
+.kv .photo,.page-hero .photo{outline:1px solid rgba(var(--gold-rgb),.55);outline-offset:10px;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.photo figcaption{border-radius:2px;background:rgba(15,29,48,.55)}
+.card .photo{border-radius:2px}
+
+/* ヘッダー：濃紺の半透明＋金の細線 */
+.header{background:rgba(15,29,48,.86);color:var(--on-dark);box-shadow:inset 0 -1px 0 rgba(var(--gold-rgb),.35)}
+.nav a[aria-current="page"]{color:var(--accent-light)}
+.header .btn{border-color:rgba(var(--gold-rgb),.7);color:var(--accent-light)}
+.header .btn:hover{background:var(--gold);border-color:var(--gold);color:var(--dark)}
+.menu-btn span{background:var(--on-dark)}
+
+/* ロゴ：シンボル＋社名 */
+.logo{gap:12px;align-items:center;font-weight:400}
+.logo-mark{width:38px;height:38px;flex:none;color:var(--gold)}
+.logo-text{display:grid;line-height:1}
+.logo small{font-family:var(--font-display);font-weight:500;font-size:10px;letter-spacing:.32em;color:inherit;opacity:.8;margin-bottom:5px}
+.logo b{font-family:var(--font-latin);font-weight:600;font-size:24px;letter-spacing:.14em}
+.footer .logo-mark{color:var(--accent)}
+@media (max-width:479px){.logo b{font-size:21px}.logo-mark{width:34px;height:34px}}
+
+/* 見出し・ラベル */
+.h-display{font-weight:600;letter-spacing:.08em}
+.h2{font-weight:600;letter-spacing:.1em}
+.scene h3{font-weight:600}
+.kicker{letter-spacing:.2em}
+.kicker::before{width:32px;height:1px;border-radius:0;background:currentColor;opacity:.8}
+.section-dark .kicker::before{background:var(--accent-light)}
+.stat .num,.steps li::before,.card .num,.timeline b,.menu-list .price,.cta .tel,.contact-box .tel{font-family:var(--font-latin);font-weight:600}
+.stat .num{color:var(--accent-light)}
+#loading{background:var(--dark)}
+#loading .word{font-family:var(--font-latin);font-weight:500;color:var(--accent-light);letter-spacing:.24em}
+#loading .bar{background:var(--gold)}
+
+/* カード・ボタン・タグを角の立った上品な形に */
+.btn{border-radius:2px;letter-spacing:.16em}
+.btn:hover{background:var(--dark);border-color:var(--dark);color:var(--on-dark)}
+.btn--accent{background:var(--accent-2);border-color:var(--accent-2);color:var(--on-dark)}
+.btn--accent:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.card,.bsc > div,.contact-box{background:var(--card);border:1px solid rgba(var(--gold-rgb),.28);box-shadow:0 24px 48px -36px rgba(15,29,48,.35)}
+a.card:hover{background:#fffdf8;border-color:rgba(var(--gold-rgb),.55)}
+.tag,.subnav a,.kv-points li{border-radius:2px}
+.input{border-radius:2px}
+.req{background:var(--accent)}
+.cta-fixed .btn{border-radius:2px}
+.cta-fixed .btn--accent{background:var(--accent-2);color:var(--on-dark);border-color:var(--accent-2)}
+.checks li::before{background-color:rgba(var(--gold-rgb),.14)}
+.footer{border-top:1px solid rgba(var(--gold-rgb),.3)}
